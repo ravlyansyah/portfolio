@@ -1,36 +1,37 @@
-# 🧪 AI-Powered Waste Classifier App
+# 🧠 Waste Classifier API — Backend AI Service
 
 [![Railway Deployment](https://img.shields.io/badge/Railway-Online-success?style=flat&logo=railway&logoColor=white)](https://railway.app)
-[![Frontend-GitHub Pages](https://img.shields.io/badge/Frontend-Live-blue?style=flat&logo=github&logoColor=white)](#)
+[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![TensorFlow](https://img.shields.io/badge/Model-TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)](https://tensorflow.org)
 
-Sebuah aplikasi web portofolio *Full-Stack AI* modern yang dirancang untuk mengklasifikasikan jenis sampah secara *real-time* (Organik, Anorganik, dan B3). Proyek ini memisahkan arsitektur *frontend* (antarmuka pengguna minimalis) dan *backend* yang melayani model *Deep Learning* secara *cloud*.
+Repository ini berisi layanan *Backend API* berbasis kecerdasan buatan yang berfungsi untuk mengklasifikasikan jenis sampah (Organik, Anorganik, dan B3) secara *real-time*. Layanan ini dibangun menggunakan **FastAPI** dan menginang (*hosting*) model *Deep Learning* di cloud **Railway.app**.
 
----
-
-## Fitur Utama
-* **Modern Premium UI:** Desain minimalis bertema *Dark Mode* dengan sentuhan efek *Glassmorphism* pada navbar.
-* **Instant Image Preview:** Gambar sampah yang diunggah langsung ditampilkan di layar secara interaktif sebelum dianalisis.
-* **Cloud AI Inference:** Pemrosesan gambar dilakukan langsung di *cloud server* Railway menggunakan model *Deep Learning* yang sudah dioptimasi.
-* **Actionable Recommendations:** Sistem tidak hanya menebak jenis sampah, tetapi juga memberikan edukasi rekomendasi penanganan yang tepat berdasarkan kategori medianya.
+Layanan API ini dirancang secara independen agar bisa diintegrasikan dengan berbagai aplikasi *frontend* (Web, Mobile, atau IoT) secara aman melalui komunikasi HTTP.
 
 ---
 
-## Arsitektur Teknologi
+## 🛠️ Spesifikasi Teknologi Backend
 
-### 1. Frontend (Antarmuka Web)
-* **HTML5 & CSS3:** Menyusun struktur semantik dan desain kustom modern berbasis variabel warna, efek blur, dan responsivitas seluler.
-* **Vanilla JavaScript:** Menangani logika pembacaan file lokal (*FileReader API*), efek transisi *loading state*, dan komunikasi *asynchronous* (Fetch API) ke server AI.
-
-### 2. Backend & Model AI (Server Cloud)
-* **FastAPI (Python):** Framework berperforma tinggi yang digunakan untuk merakit API Endpoint `/predict` dengan dukungan CORS terintegrasi agar bisa ditembak dari web *frontend*.
-* **TensorFlow / Keras:** Otak kecerdasan buatan yang memuat model klasifikasi berbasis visi komputer (*Computer Vision*).
-* **Railway.app:** Platform *cloud hosting* yang digunakan untuk mendeploy server backend agar selalu online 24/7.
+* **Python 3.10+**: Bahasa pemrograman utama untuk manipulasi data dan server logika.
+* **FastAPI**: Framework API berperforma tinggi yang menyediakan endpoint klasifikasi dengan dokumentasi otomatis.
+* **TensorFlow / Keras**: Digunakan untuk memuat (*load*) dan mengeksekusi inferensi gambar menggunakan model saraf tiruan (*Convolutional Neural Network*).
+* **CORSMiddleware**: Dikonfigurasi secara khusus untuk mengizinkan aplikasi web *frontend* (seperti Live Server lokal atau GitHub Pages) menembak API secara aman tanpa terblokir oleh browser.
 
 ---
 
-##  Isi Repositori
+## 🔌 Endpoint API Resmi
 
-```text
-├── index.html       # Struktur utama halaman web (HTML5)
-├── style.css        # Desain visual & efek tema premium (CSS3)
-└── script.js        # Logika input, preview gambar, & penembak API (JS)
+### **Klasifikasi Gambar Sampah**
+Mengirimkan file gambar untuk dianalisis oleh model AI.
+
+* **URL:** `/predict`
+* **Method:** `POST`
+* **Data Params (Form-Data):** * `file`: `[File Gambar/Image]` (accepts: .jpg, .jpeg, .png)
+
+* **Contoh Respon JSON (Success):**
+```json
+{
+  "prediction": "Anorganik",
+  "confidence": 0.945,
+  "description": "Sampah anorganik seperti botol plastik memerlukan waktu ratusan tahun untuk terurai. Disarankan untuk dikumpulkan dan disalurkan ke bank sampah terdekat."
+}
