@@ -1,4 +1,4 @@
-# 🧠 Waste Classifier API — Backend AI Service
+# Waste Classifier API — Backend AI Service
 
 [![Railway Deployment](https://img.shields.io/badge/Railway-Online-success?style=flat&logo=railway&logoColor=white)](https://railway.app)
 [![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -10,7 +10,7 @@ Layanan API ini dirancang secara independen agar bisa diintegrasikan dengan berb
 
 ---
 
-## 🛠️ Spesifikasi Teknologi Backend
+## Spesifikasi Teknologi Backend
 
 * **Python 3.10+**: Bahasa pemrograman utama untuk manipulasi data dan server logika.
 * **FastAPI**: Framework API berperforma tinggi yang menyediakan endpoint klasifikasi dengan dokumentasi otomatis.
@@ -19,7 +19,7 @@ Layanan API ini dirancang secara independen agar bisa diintegrasikan dengan berb
 
 ---
 
-## 🔌 Endpoint API Resmi
+## Endpoint API Resmi
 
 ### **Klasifikasi Gambar Sampah**
 Mengirimkan file gambar untuk dianalisis oleh model AI.
