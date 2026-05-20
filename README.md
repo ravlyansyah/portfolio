@@ -33,5 +33,4 @@ Sebuah aplikasi web portofolio *Full-Stack AI* modern yang dirancang untuk mengk
 ```text
 ├── index.html       # Struktur utama halaman web (HTML5)
 ├── style.css        # Desain visual & efek tema premium (CSS3)
-├── script.js        # Logika input, preview gambar, & penembak API (JS)
-└── README.md        # Dokumentasi proyek (Sistem ini)
+└── script.js        # Logika input, preview gambar, & penembak API (JS)
